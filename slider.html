@@ -32,14 +32,11 @@
     #slider .slider-pagination {
       position: absolute;
       text-align: center;
-    }
-
-    #slider .slider-pagination-dot {
       bottom: 10px;
       width: 100%;
     }
 
-    #slider .slider-pagination-dot .slider-pagination-item {
+    #slider .slider-pagination .slider-pagination-item {
       width: 8px;
       height: 8px;
       border-radius: 100%;
@@ -49,7 +46,7 @@
       cursor: pointer;
     }
 
-    #slider .slider-pagination-dot .slider-pagination-item-active {
+    #slider .slider-pagination .slider-pagination-item-active {
       background: rgba(0, 122, 255, 1);
     }
   </style>
@@ -67,9 +64,10 @@
   <button class="slider-prev">Prev</button>
   <button class="slider-next">Next</button>
   <script type="module">
-    import Slider from './Slider.js';
+    import Slider from './src/Slider.js';
     const slider = new Slider('#slider', {
-      navigation: { nextEl: '.slider-next', prevEl: '.slider-prev' }
+      loop: true,
+      navigation: { nextEl: '.slider-next', prevEl: '.slider-prev' },
     });
     console.log(slider);
   </script>
